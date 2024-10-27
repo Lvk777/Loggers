@@ -1,0 +1,38 @@
+-- NoFog
+
+local Lighting = game:GetService('Lighting')
+
+-- Configurações de iluminação
+Lighting.Ambient = Color3.fromRGB(255, 255, 255)  -- Cor de ambiente
+Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)  -- Cor externa
+Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)  -- Cor do topo
+Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)  -- Cor do fundo
+
+-- Configura atmosfera
+local atmosphere = Lighting:FindFirstChildOfClass('Atmosphere')
+if atmosphere then
+    atmosphere.Density = 0  -- Densidade da atmosfera
+end
+
+-- Monitora alterações nas propriedades
+Lighting:GetPropertyChangedSignal("Ambient"):Connect(function()
+    Lighting.Ambient = Color3.fromRGB(255, 255, 255)
+end)
+
+Lighting:GetPropertyChangedSignal("OutdoorAmbient"):Connect(function()
+    Lighting.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
+end)
+
+Lighting:GetPropertyChangedSignal("ColorShift_Top"):Connect(function()
+    Lighting.ColorShift_Top = Color3.fromRGB(255, 255, 255)
+end)
+
+Lighting:GetPropertyChangedSignal("ColorShift_Bottom"):Connect(function()
+    Lighting.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
+end)
+
+if atmosphere then
+    atmosphere:GetPropertyChangedSignal("Density"):Connect(function()
+        atmosphere.Density = 0
+    end)
+end
